@@ -26,8 +26,10 @@
     "inversify": "^5.0.1",
     "inversify-express-utils": "^6.3.2",
     "joi": "^14.3.1",
+    "node-cron": "^2.0.3",
     "pg": "^7.17.0",
     "reflect-metadata": "^0.1.13",
+    "superagent": "^5.2.2",
     "typeorm": "^0.2.22"
   },
   "devDependencies": {
@@ -39,6 +41,8 @@
     "@types/mocha": "^5.2.7",
     "@types/mock-req-res": "^1.1.0",
     "@types/node": "^13.1.4",
+    "@types/node-cron": "^2.0.3",
+    "@types/superagent": "^4.1.7",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^7.0.0",
