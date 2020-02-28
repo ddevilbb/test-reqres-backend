@@ -1,7 +1,7 @@
 import config from './config';
-import { container } from '../src/ioc.container';
+import { container } from '../src/application/ioc.container';
 import { ConnectionOptions, createConnection, getConnection } from 'typeorm';
-import { User } from '../src/entities/user';
+import { User } from '../src/domains/user/entities/user';
 import { cleanUpMetadata } from 'inversify-express-utils';
 
 const ormOptions: ConnectionOptions = config.typeOrm as ConnectionOptions;

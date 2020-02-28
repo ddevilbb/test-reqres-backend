@@ -4,7 +4,7 @@ import { InversifyExpressServer } from 'inversify-express-utils';
 import * as bodyParser from 'body-parser';
 import { Request, Response, NextFunction } from 'express';
 import { container } from '../../ioc.container';
-import handle from '../../middlewares/error.handler';
+import handle from '../../../core/middlewares/error.handler';
 
 /* istanbul ignore next */
 export const buildApp = () => {

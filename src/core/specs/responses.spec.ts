@@ -2,7 +2,7 @@ import * as chai from 'chai';
 import * as express from 'express';
 import { responseErrorWithObject, responseWith } from '../responses';
 import { Request, Response, NextFunction } from 'express';
-import { ErrorWithCode } from '../../exceptions/exceptions';
+import { ErrorWithCode } from '../exceptions/exceptions';
 import { INTERNAL_SERVER_ERROR, OK } from 'http-status';
 import('mocha');
 

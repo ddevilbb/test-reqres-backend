@@ -1,8 +1,8 @@
 import 'reflect-metadata';
 import { Container } from 'inversify';
-import './controllers/users.controller';
-import { UserService, UserServiceInterface, UserServiceType } from './services/user.service';
-import { UserTransformer, UserTransformerInterface, UserTransformerType } from './transformers/user.transformer';
+import '../application/controllers/users.controller';
+import { UserService, UserServiceInterface, UserServiceType } from '../domains/user/services/user.service';
+import { UserTransformer, UserTransformerInterface, UserTransformerType } from '../domains/user/transformers/user.transformer';
 
 let container = new Container();
 

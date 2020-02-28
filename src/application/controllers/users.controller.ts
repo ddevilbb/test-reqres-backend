@@ -1,8 +1,8 @@
 import { controller, httpGet, interfaces } from 'inversify-express-utils';
 import { Request, Response } from 'express';
-import { UserServiceInterface, UserServiceType } from '../services/user.service';
+import { UserServiceInterface, UserServiceType } from '../../domains/user/services/user.service';
 import { inject } from 'inversify';
-import { UserTransformerInterface, UserTransformerType } from '../transformers/user.transformer';
+import { UserTransformerInterface, UserTransformerType } from '../../domains/user/transformers/user.transformer';
 
 @controller('/users')
 export class UsersController implements interfaces.Controller {

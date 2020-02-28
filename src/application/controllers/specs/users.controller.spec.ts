@@ -1,9 +1,12 @@
 import * as chai from 'chai';
+import chaiHttp = require('chai-http');
 import * as factory from './test.app.factory';
+
+chai.use(chaiHttp);
 
 const { expect, request } = chai;
 
-require('../../../test/load.fixtures');
+require('../../../../test/load.fixtures');
 
 const getRequest = (customApp, url: string) => {
   return request(customApp)
