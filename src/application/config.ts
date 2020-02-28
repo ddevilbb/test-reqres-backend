@@ -10,7 +10,9 @@ const {
   TYPEORM_APP_PASSWORD,
   TYPEORM_SYNCHRONIZE,
   TYPEORM_LOGGING,
-  TYPEORM_ENTITIES_DIR
+  TYPEORM_ENTITIES_DIR,
+  REQRES_API_URL,
+  REQRES_API_PER_PAGE
 } = process.env;
 
 export default {
@@ -35,5 +37,9 @@ export default {
     cli: {
       entitiesDir: TYPEORM_ENTITIES_DIR
     }
+  },
+  reqres: {
+    apiUrl: REQRES_API_URL,
+    perPage: parseInt(REQRES_API_PER_PAGE) || 10
   }
 };
