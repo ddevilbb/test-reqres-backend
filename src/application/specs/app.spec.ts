@@ -1,5 +1,5 @@
 import * as chai from 'chai';
-import app from '../../app';
+import app from '../app';
 import('mocha');
 
 chai.use(require('chai-http'));

@@ -13,13 +13,13 @@ prepare(function (done) {
     'synchronize': true,
     'logging': false,
     'entities': [
-      'src/entities/**/*.ts'
+      'src/**/entities/**/*.ts'
     ],
     'migrations': [
-      'src/migrations/**/*.ts'
+      'src/**/migrations/**/*.ts'
     ],
     'subscribers': [
-      'src/subscriber/**/*.ts'
+      'src/**/subscriber/**/*.ts'
     ]
   }).then(async connection => {
     done();

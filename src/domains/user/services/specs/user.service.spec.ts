@@ -1,13 +1,13 @@
 import * as chai from 'chai';
 import { User } from '../../entities/user';
-import { container } from '../../ioc.container';
+import { container } from '../../../../application/ioc.container';
 import { UserServiceInterface, UserServiceType } from '../user.service';
 
 const { expect } = chai;
 
 const userService = container.get<UserServiceInterface>(UserServiceType);
 
-require('../../../test/load.fixtures');
+require('../../../../../test/load.fixtures');
 
 describe('User service tests', () => {
   it('should create and return new User entity', async() => {

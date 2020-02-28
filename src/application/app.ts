@@ -5,7 +5,7 @@ import { InversifyExpressServer } from 'inversify-express-utils';
 import { container } from './ioc.container';
 import * as bodyParser from 'body-parser';
 import cors = require('cors');
-import handle from './middlewares/error.handler';
+import handle from '../core/middlewares/error.handler';
 
 const app: Application = express();
 
