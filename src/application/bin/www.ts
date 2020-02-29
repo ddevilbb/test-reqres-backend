@@ -5,12 +5,11 @@ import { ConnectionOptions, createConnection } from 'typeorm';
 import config from '../config';
 import * as cron from 'node-cron';
 import {
-  UserLoadTask,
   UserLoadTaskInterface,
   UserLoadTaskType,
 } from '../../domains/user/tasks/user.load.task';
 import { container } from '../ioc.container';
-import { UserServiceInterface } from '../../domains/user/services/user.service';
+
 
 const httpServer = http.createServer(app);
 const ormOptions: ConnectionOptions = config.typeOrm as ConnectionOptions;
