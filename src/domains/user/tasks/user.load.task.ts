@@ -1,15 +1,15 @@
 import config from '../../../application/config';
 import { inject, injectable } from 'inversify';
 import { UsersApiResponseBody } from '../interfaces/user.interfaces';
-import { UserServiceInterface, UserServiceType } from './user.service';
+import { UserServiceInterface, UserServiceType } from '../services/user.service';
 const superagent = require('superagent');
 
-export interface UserLoadServiceInterface {
+export interface UserLoadTaskInterface {
   load(): Promise<void>;
 }
 
 @injectable()
-export class UserLoadService implements UserLoadServiceInterface {
+export class UserLoadTask implements UserLoadTaskInterface {
   private apiUrl: string;
   private perPage: number;
   private totalPages: number;
@@ -56,5 +56,5 @@ export class UserLoadService implements UserLoadServiceInterface {
   }
 }
 
-const UserLoadServiceType = Symbol('UserLoadServiceInterface');
-export { UserLoadServiceType };
+const UserLoadTaskType = Symbol('UserLoadTaskInterface');
+export { UserLoadTaskType };

@@ -5,20 +5,19 @@ import { ConnectionOptions, createConnection } from 'typeorm';
 import config from '../config';
 import * as cron from 'node-cron';
 import {
-  UserLoadService,
-  UserLoadServiceInterface,
-  UserLoadServiceType,
-} from '../../domains/user/services/user.load.service';
+  UserLoadTaskInterface,
+  UserLoadTaskType,
+} from '../../domains/user/tasks/user.load.task';
 import { container } from '../ioc.container';
-import { UserServiceInterface } from '../../domains/user/services/user.service';
+
 
 const httpServer = http.createServer(app);
 const ormOptions: ConnectionOptions = config.typeOrm as ConnectionOptions;
-const userLoadService: UserLoadServiceInterface = container.get<UserLoadServiceInterface>(UserLoadServiceType);
+const userLoadTask: UserLoadTaskInterface = container.get<UserLoadTaskInterface>(UserLoadTaskType);
 
 createConnection(ormOptions).then(async connection => {
   cron.schedule('* * * * *', () => {
-    userLoadService.load();
+    userLoadTask.load();
   });
   httpServer.listen(config.app.port);
 }).catch(error => console.log('TypeORM connection error: ', error));
