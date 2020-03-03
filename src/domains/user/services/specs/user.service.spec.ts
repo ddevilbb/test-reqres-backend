@@ -12,7 +12,7 @@ require('../../../../../test/load.fixtures');
 describe('User service tests', () => {
   it('should create and return new User entity', async() => {
     const userData = {
-      id: 5,
+      id: 25,
       email: 'test5@test.ru',
       first_name: 'Test5',
       last_name: 'Test5',
