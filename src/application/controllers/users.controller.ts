@@ -4,7 +4,10 @@ import { UserServiceInterface, UserServiceType } from '../../domains/user/servic
 import { inject } from 'inversify';
 import { UserTransformerInterface, UserTransformerType } from '../../domains/user/transformers/user.transformer';
 
-@controller('/users')
+@controller(
+  '/users',
+  'OnlyAcceptApplicationJson'
+)
 export class UsersController implements interfaces.Controller {
   constructor(
     @inject(UserServiceType) private userService: UserServiceInterface,
@@ -18,7 +21,10 @@ export class UsersController implements interfaces.Controller {
     res.json(this.userTransformer.list(users));
   }
 
-  @httpGet('/search')
+  @httpGet(
+    '/search',
+    'UserSearchValidation'
+  )
   async search(req: Request, res: Response): Promise<void> {
     const users = await this.userService.search(req.body.search);
 
