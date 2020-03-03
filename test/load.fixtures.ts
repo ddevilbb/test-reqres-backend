@@ -9,7 +9,8 @@ const ormOptions: ConnectionOptions = config.typeOrm as ConnectionOptions;
 before(async() => {
   container.snapshot();
   /* istanbul ignore next */
-  createConnection(ormOptions).then(async connection => {
+  await createConnection(ormOptions).then(async connection => {
+    await clearFixtures();
     await loadFixtures();
   }).catch(error => console.log('TypeORM connection error: ', error));
 });
@@ -17,7 +18,6 @@ before(async() => {
 after(async() => {
   container.restore();
   await clearFixtures();
-  await getConnection().close();
 });
 
 async function loadFixtures() {
@@ -27,7 +27,7 @@ async function loadFixtures() {
 async function usersFixtures() {
   const users = require('./fixtures/users');
 
-  getConnection().getRepository(User).save(users);
+  await getConnection().getRepository(User).save(users);
 }
 
 async function clearFixtures() {

@@ -11,6 +11,7 @@ const app: Application = express();
 
 let server = new InversifyExpressServer(container, null, null, app);
 
+/* istanbul ignore next */
 server.setConfig((app) => {
   app.use(bodyParser.urlencoded({
     extended: true
@@ -21,6 +22,7 @@ server.setConfig((app) => {
   app.use(cors());
 });
 
+/* istanbul ignore next */
 server.setErrorConfig((app) => {
   app.use((req: Request, res: Response, next: NextFunction) => {
     res.status(404).send({

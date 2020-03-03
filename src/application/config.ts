@@ -15,6 +15,7 @@ const {
   REQRES_API_PER_PAGE
 } = process.env;
 
+/* istanbul ignore next */
 export default {
   app: {
     port: parseInt(APPLICATION_PORT, 10) || 3000
@@ -40,6 +41,6 @@ export default {
   },
   reqres: {
     apiUrl: REQRES_API_URL,
-    perPage: parseInt(REQRES_API_PER_PAGE) || 10
+    perPage: parseInt(REQRES_API_PER_PAGE, 10) || 10
   }
 };

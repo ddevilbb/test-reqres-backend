@@ -24,10 +24,13 @@ export class UserLoadTask implements UserLoadTaskInterface {
   async load(): Promise<void> {
     await this.init();
 
-    while (this.totalPages > 0) {
-      this.loadUsers(this.totalPages);
-      this.totalPages--;
+    for (let i = 1; i <= this.totalPages; i++) {
+      await this.loadUsers(i);
     }
+    // while (this.totalPages > 0) {
+    //   this.loadUsers(this.totalPages);
+    //   this.totalPages--;
+    // }
   }
 
   private async init(): Promise<void> {
