@@ -25,10 +25,10 @@ describe('Users controller test', () => {
     });
 
     it('should return users list by search string', (done) => {
-      const query = {
+      const body = {
         search: 'Test'
       };
-      getRequest(factory.testApp(), '/users/search').query(query).end((err, res) => {
+      getRequest(factory.testApp(), '/users/search').query(body).end((err, res) => {
         expect(res.status).to.equal(200);
         expect(res.body).to.be.an.instanceOf(Array);
         done();
