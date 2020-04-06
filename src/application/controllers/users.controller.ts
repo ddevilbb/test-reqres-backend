@@ -21,6 +21,14 @@ export class UsersController implements interfaces.Controller {
     res.json(this.userTransformer.list(users));
   }
 
+  @httpGet('/:id')
+  async user(req: Request, res: Response): Promise<void> {
+    const { id } = req.params;
+    const user = await this.userService.find(id);
+
+    res.json(this.userTransformer.item(user));
+  }
+
   @httpGet(
     '/search',
     'UserSearchValidation'

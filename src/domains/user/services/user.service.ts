@@ -6,6 +6,7 @@ import { UserDataInterface } from '../interfaces/user.interfaces';
 export interface UserServiceInterface {
   store(data: UserDataInterface): Promise<User>;
   findAll(): Promise<User[]>;
+  find(id: string): Promise<User>;
   search(search: string): Promise<User[]>;
 }
 
@@ -21,6 +22,10 @@ export class UserService implements UserServiceInterface {
 
   async findAll(): Promise<User[]> {
     return getConnection().getRepository(User).find();
+  }
+
+  async find(id: string): Promise<User> {
+    return getConnection().getRepository(User).findOne(id);
   }
 
   async search(search: string): Promise<User[]> {
